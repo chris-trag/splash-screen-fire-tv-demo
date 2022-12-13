@@ -15,9 +15,6 @@ You can follow this guide and check this repository to develop your custom splas
 
 2. Connect your Fire TV device following these [instructions](https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html)
 
-```
-   adb connect 127.0.0.1:58526
-```
 3. Run the app
 
 
