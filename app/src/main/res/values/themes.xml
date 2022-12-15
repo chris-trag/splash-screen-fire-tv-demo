@@ -8,7 +8,7 @@
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.SplashScreenTV.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowBackground">@drawable/splashscreen</item>
     </style>
 
     <style name="Theme.SplashScreenTV.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
