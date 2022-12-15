@@ -22,8 +22,7 @@ You can follow this guide and check this repository to develop your custom splas
 
 **Step 1:** Create your custom splash screen
 
-Create a file splashscreen.xml in the drawable directory. This fill will contain all the graphic elements, arranged in layers, of your splash screen.
-
+Create a file named splashscreen.xml in the drawable directory. This file will contain all the graphic elements and layers of your splash screen, such as the background color and the main graphic. This file should have the following markup:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
@@ -33,17 +32,16 @@ Create a file splashscreen.xml in the drawable directory. This fill will contain
         </shape>
     </item>
 
-    <item>
-        <bitmap android:src="@drawable/app_icon_your_company" android:gravity="center"/>
-    </item>
+    <item android:drawable="@drawable/splashscreen_logo" android:gravity="center"/>
+
 </layer-list>
 ```
 
-Note: SVG (Scalable Vector Graphics) image format performs better compared to other formats in our testing on FireTV devices.
+*Note:* The SVG (Scalable Vector Graphics) image format load faster compared to other image formats when testing on FireTV devices.
 
 **Step 2:** Create the splash screen theme
 
-In the file styles.xml of your project, define a new style. Then add an item ```android:windowBackground``` set as the splash screen drawable you created the step before.
+Define a new style in the file styles.xml of your project then add an android:windowBackground item set as the @drawable/splashscreen splash screen you created in the prior step:
 
  ```xml
     <style name="SplashScreenTheme" parent="Theme.SplashScreenTV.NoActionBar">
@@ -53,7 +51,7 @@ In the file styles.xml of your project, define a new style. Then add an item ```
 
 **Step 3:** Create the splash screen activity
 
-Create a new activity responsible just to display the splash screen, launch the main activity and terminate.
+Create a new activity responsible for displaying the splash screen, launch the main activity, then terminate:
 
 ```kotlin
 class SplashScreenActivity : AppCompatActivity() {
@@ -68,8 +66,7 @@ class SplashScreenActivity : AppCompatActivity() {
 ```
 **Step 4:** Apply the splash screen theme to the splash screen activity
 
-In the AndroidManifest.xml set the theme attribute of the Splash screen activity to the splash screen
-theme you created at step 2. Also remember to move the intent filter with the action main and category launcher from the Main Activity to the splash screen activity, as this will be the one launched the first time the user start your app.
+In AndroidManifest.xml, set the theme attribute of the SplashScreenActivity to the theme you setup in step 2. The SplashScreenActivity will be the first activity called by the launcher, so remember to move the intent filter with the action android.intent.action.MAIN and category android.intent.category.LEANBACK_LAUNCHER from the Main Activity to the SplashScreenActivity:
 
 ```xml
 <activity
@@ -85,7 +82,9 @@ theme you created at step 2. Also remember to move the intent filter with the ac
 </activity>
 ```
 
-## Done!
+*Success:* Your custom splash screen is now complete!
+
+You have now implemented a custom splash screen and optimized the starting time of your Fire TV app displaying your branding image. To test this for yourself, use the Android Debug Bridge and follow our docs on installing your app on Fire TV (https://developer.amazon.com/docs/fire-tv/installing-and-running-your-app.html).
 
 ![splash screen at cold start](images/splashscreen.gif)
 
