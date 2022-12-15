@@ -82,7 +82,7 @@ In AndroidManifest.xml, set the theme attribute of the SplashScreenActivity to t
 </activity>
 ```
 
-*Success:* Your custom splash screen is now complete!
+## Success: Your custom splash screen is now complete!
 
 You have now implemented a custom splash screen and optimized the starting time of your Fire TV app displaying your branding image. To test this for yourself, use the Android Debug Bridge and follow our docs on installing your app on Fire TV (https://developer.amazon.com/docs/fire-tv/installing-and-running-your-app.html).
 
