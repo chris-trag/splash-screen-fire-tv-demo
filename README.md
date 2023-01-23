@@ -1,28 +1,23 @@
 # Splash Screen sample app for Fire TV
 
-This project is an Android TV app showcasing how to develop a Splash Screen for Fire TV apps.
+This project is an Android TV app showcasing how to develop a Splash Screen for Amazon Fire TV apps. Follow the guide and check this repository to develop your custom splash screen.
 
-As Fire TV devices are running Fire OS (based on Android 11 or lower) currently you cannot use the
-Android 12 new SplashScreen APIs as described in [https://developer.android.com/develop/ui/views/launch/splash-screen](https://developer.android.com/develop/ui/views/launch/splash-screen).
+**Note:** Fire OS is based on the [Android Open Source project version 11](https://source.android.com/docs/setup/about/android-11-release)so you should not use Android 12's new SplashScreen APIs as described in [the Android v12 docs](https://developer.android.com/develop/ui/views/launch/splash-screen).
 
-You can follow this guide and check this repository to develop your custom splash screen
 
 ## 💻 Building the Splash Screen TV demo
 
-1. Clone the following repository:
-
+1. Clone the demo app repository:
 `git clone git@github.com:giolaq/splash-screen-fire-tv-demo.git`
-
-2. Connect your Fire TV device following these [instructions](https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html)
-
-3. Run the app
-
+2. Connect your Fire TV device following these [instructions](https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html).
+3. Run the demo app [following these docs](https://developer.amazon.com/docs/fire-tv/installing-and-running-your-app.html).
 
 ## How to develop a custom splash screen for your Fire TV Apps
 
 **Step 1:** Create your custom splash screen
 
-Create a file named splashscreen.xml in the drawable directory. This file will contain all the graphic elements and layers of your splash screen, such as the background color and the main graphic. This file should have the following markup:
+Create a file named `splashscreen.xml` in the drawable directory. This file will contain all the graphic elements and layers of your splash screen, such as the background color and the main graphic. This file should have the following markup:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
@@ -66,7 +61,7 @@ class SplashScreenActivity : AppCompatActivity() {
 ```
 **Step 4:** Apply the splash screen theme to the splash screen activity
 
-In AndroidManifest.xml, set the theme attribute of the SplashScreenActivity to the theme you setup in step 2. The SplashScreenActivity will be the first activity called by the launcher, so remember to move the intent filter with the action android.intent.action.MAIN and category android.intent.category.LEANBACK_LAUNCHER from the Main Activity to the SplashScreenActivity:
+In `AndroidManifest.xml`, set the theme attribute of the `SplashScreenActivity` to the theme you setup in step 2. The `SplashScreenActivity` will be the first activity called by the launcher, so remember to move the intent filter with the action `android.intent.action.MAIN` and category `android.intent.category.LEANBACK_LAUNCHER` from the Main Activity to the `SplashScreenActivity`:
 
 ```xml
 <activity
@@ -84,7 +79,7 @@ In AndroidManifest.xml, set the theme attribute of the SplashScreenActivity to t
 
 ## Success: Your custom splash screen is now complete!
 
-You have now implemented a custom splash screen and optimized the starting time of your Fire TV app displaying your branding image. To test this for yourself, use the Android Debug Bridge and follow our docs on installing your app on Fire TV (https://developer.amazon.com/docs/fire-tv/installing-and-running-your-app.html).
+You have now implemented a custom splash screen and optimized the starting time of your Fire TV app displaying your branding image. To test this for yourself, use the Android Debug Bridge and follow [our docs on installing your app on Fire TV](https://developer.amazon.com/docs/fire-tv/installing-and-running-your-app.html).
 
 ![splash screen at cold start](images/splashscreen.gif)
 
@@ -96,8 +91,17 @@ If you have questions, comments, or need help with code, we're here to help:
 - on Twitter at [@AmazonAppDev](https://twitter.com/AmazonAppDev)
 - on Stack Overflow at the [amazon-appstore](https://stackoverflow.com/questions/tagged/amazon-appstore) tag
 
-Sign up to [stay updated with the developer newsletter](https://m.amazonappservices.com/subscribe-newsletter).
+
+### Stay updated
+Get the most up to date Amazon Appstore developer news, product releases, tutorials, and more:
+
+* 📣 Follow [@AmazonAppDev](https://twitter.com/AmazonAppDev) and [our team](https://twitter.com/i/lists/1580293569897984000) on [Twitter](https://twitter.com/AmazonAppDev)
+* 📺 Subscribe to our [Youtube channel](https://www.youtube.com/amazonappstoredevelopers)
+* 📧 Sign up for the [Developer Newsletter](https://m.amazonappservices.com/devto-newsletter-subscribe)
+
+
 
 ## Authors
 
 - [@giolaq](https://twitter.com/giolaq)
+- [@chris_trag](https://twitter.com/chris_trag)
